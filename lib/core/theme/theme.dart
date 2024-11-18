@@ -11,11 +11,15 @@ class AppTheme {
       );
 
   static final darkMode = ThemeData.dark().copyWith(
-      primaryColor: Colors.black,
-      colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.white),
+      scaffoldBackgroundColor: AppPalette.backgroundColor,
+      appBarTheme: const AppBarTheme(
+        backgroundColor: AppPalette.backgroundColor,
+        iconTheme: IconThemeData(color: AppPalette.whiteColor),
+      ),
+      colorScheme: ColorScheme.fromSwatch().copyWith(secondary: AppPalette.whiteColor),
       inputDecorationTheme: InputDecorationTheme(
         contentPadding: const EdgeInsets.all(20),
-        hintStyle: const TextStyle(color: Colors.grey),
+        hintStyle: const TextStyle(color: AppPalette.greyColor),
         enabledBorder: _border(AppPalette.borderColor),
         focusedBorder: _border(AppPalette.gradient2),
       ));

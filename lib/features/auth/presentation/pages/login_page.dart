@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+  static route() => MaterialPageRoute(builder: (context) => const LoginPage());
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -48,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
           const SizedBox(height: 20),
           GestureDetector(
-            onTap: () => Navigator.pushNamed(context, MaterialPageRoute(builder: (context) => const SignUpPage()) as String),
+            onTap: () => Navigator.push(context, SignUpPage.route()),
             child: RichText(
               text: TextSpan(
                 text: "Don't have an account? ",
